@@ -20,7 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/api/appsheet")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://pt6402.github.io/")
 @Slf4j
 public class GGSheetController {
 
