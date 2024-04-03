@@ -1,7 +1,7 @@
 FROM maven:3.8.3-openjdk-17 as build
 WORKDIR /app
 COPY . /app/
-COPY .tokens/StoredCredential /app/tokens/StoredCredential
+COPY ./tokens/StoredCredential /app/tokens/StoredCredential
 RUN mvn clean package
 
 FROM openjdk:17-alpine
