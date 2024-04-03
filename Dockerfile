@@ -5,7 +5,7 @@ RUN mvn clean package
 
 FROM openjdk:17-alpine
 WORKDIR /app
-COPY /app/tokens /app/tokens/StoredCredential
+COPY ./tokens /app/tokens/StoredCredential
 COPY --from=build /app/target/*.jar /app/app.jar
 EXPOSE 8080
 ENTRYPOINT [ "java","-jar","app.jar" ]
