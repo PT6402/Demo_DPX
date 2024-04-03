@@ -1,13 +1,4 @@
-# Base image được sử dụng để build image
-FROM ubuntu:latest AS build
-RUN apt-get update
-RUN apt-get install openjdk-17-jdk -y
-
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./ 
-COPY src ./src 
-CMD ["./mvnw","spring-boot:run"]
-
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk-alpine
+COPY target/*.jar app.jar
+ENTRYPOINT [ "java","-jar","/app.jar" ]
 EXPOSE 8080
-
