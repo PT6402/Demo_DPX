@@ -1,12 +1,10 @@
 FROM maven:3.8.3-openjdk-17 as build
 WORKDIR /app
 COPY . /app/
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./ 
-CMD ["./mvnw","spring-boot:run"]
+RUN mvn clean package
 
 FROM openjdk:17-alpine
 WORKDIR /app
-# COPY --from=build /app/target/*.jar /app/app.jar
+COPY --from=build /app/target/*.jar /app/app.jar
 EXPOSE 8080
-# ENTRYPOINT [ "java","-jar","app.jar" ]
+ENTRYPOINT [ "java","-jar","app.jar" ]
