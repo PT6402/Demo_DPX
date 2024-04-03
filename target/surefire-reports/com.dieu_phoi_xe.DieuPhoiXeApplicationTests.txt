@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.dieu_phoi_xe.DieuPhoiXeApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.163 s -- in com.dieu_phoi_xe.DieuPhoiXeApplicationTests
