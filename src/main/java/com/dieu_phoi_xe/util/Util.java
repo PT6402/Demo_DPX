@@ -62,9 +62,9 @@ public class Util {
         GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
                 HTTP_TRANSPORT, JSON_FACTORY, clientSecrets, SCOPES)
                 .setDataStoreFactory(new FileDataStoreFactory(new java.io.File(TOKENS_DIRECTORY_PATH)))
-                .setAccessType("online")
+                .setAccessType("offline")
                 .build();
-        LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(8888).build();
+        LocalServerReceiver receiver = new LocalServerReceiver.Builder().setHost("demo-dpx.onrender.com").setPort(8888).build();
         return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
     }
 
