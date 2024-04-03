@@ -1,0 +1,12 @@
+version: '1.0'
+services:
+  server:
+      container_name: spring-boot
+      build:
+        context: .
+        dockerfile: Dockerfile
+      depends_on:
+        - mssql
+      restart: always
+      ports:
+        - "8080:8080"
