@@ -15,7 +15,6 @@ COPY mvnw pom.xml ./
 EXPOSE 8080
 
 # Chỉ định command để chạy ứng dụng khi container khởi chạy
-RUN ./mvnw dependency:go-offline
 COPY src ./src 
 
 CMD ["./mvnw","spring-boot:run"]
