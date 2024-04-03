@@ -64,7 +64,7 @@ public class Util {
                 .setDataStoreFactory(new FileDataStoreFactory(new java.io.File(TOKENS_DIRECTORY_PATH)))
                 .setAccessType("offline")
                 .build();
-        LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(8888).setHost("demo-dpx.onrender.com").build();
+        LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(8888).setHost("13.228.225.1918.142.128.2654.254.162.138").build();
         return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
     }
 
